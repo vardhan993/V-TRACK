@@ -1,0 +1,33 @@
+{
+  "name": "vtrack-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "V-Track API - Cloudflare Workers + D1 (free tier only, no Firebase/Supabase)",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "migrate:local": "wrangler d1 migrations apply vtrack --local",
+    "migrate:remote": "wrangler d1 migrations apply vtrack --remote",
+    "db:create": "wrangler d1 create vtrack"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.23.0",
+    "@cloudflare/workers-types": "^5.20261011.1",
+    "typescript": "^5.9.0",
+    "vitest": "^4.1.11",
+    "wrangler": "^4.149.0"
+  },
+  "dependencies": {
+    "zod": "^3.25.76"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "esbuild@0.28.2": true,
+    "workerd@1.20260815.1": true,
+    "workerd@1.20261006.1": true
+  }
+}

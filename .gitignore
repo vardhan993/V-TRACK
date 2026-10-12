@@ -1,0 +1,19 @@
+# V-Track repository-wide ignores.
+# Secrets live in backend/.dev.vars (local) and Cloudflare secrets (production).
+
+.freebuff/
+*.log
+
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/captures/
+android/.idea/
+android/*.iml
+
+# Node / Wrangler (belt and braces - backend/.gitignore already covers these)
+backend/node_modules/
+backend/.wrangler/
+backend/.dev.vars

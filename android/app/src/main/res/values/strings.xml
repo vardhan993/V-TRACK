@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">V-Track</string>
+    <string name="channel_tracking_name">Activity tracking</string>
+    <string name="channel_tracking_desc">Keeps step counting and live workouts running</string>
+    <string name="channel_reminder_name">Goals &amp; reminders</string>
+    <string name="channel_reminder_desc">Daily goal and challenge reminders</string>
+    <string name="channel_sync_name">Cloud sync</string>
+    <string name="channel_sync_desc">Background synchronization with the V-Track server</string>
+
+    <string name="notif_live_title">Workout in progress</string>
+    <string name="notif_steps_title">V-Track is counting your steps</string>
+    <string name="notif_sync_title">Syncing activity</string>
+
+    <string name="health_rationale_title">Health Connect access</string>
+    <string name="health_rationale_body">V-Track can read steps, distance, calories and workouts you already recorded in Health Connect so your dashboard is complete. Data is only read on this device and you can revoke access at any time.</string>
+</resources>

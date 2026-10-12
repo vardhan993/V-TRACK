@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="vtrack_electric_green">#FF39FF88</color>
+    <color name="vtrack_midnight">#FF05080F</color>
+    <color name="vtrack_navy">#FF0C1424</color>
+    <color name="vtrack_white">#FFFFFFFF</color>
+</resources>

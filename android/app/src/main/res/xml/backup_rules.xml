@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Never back up authentication material or the encryption key wrapper. -->
+    <exclude domain="sharedpref" path="vtrack_secure.xml" />
+    <exclude domain="file" path="vtrack_secure" />
+    <exclude domain="file" path="datastore/vtrack_session.preferences_pb" />
+    <include domain="database" path="vtrack.db" />
+</full-backup-content>

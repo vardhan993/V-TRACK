@@ -1,0 +1,51 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "vtrack-api",
+  "main": "src/index.ts",
+  // Pinned to a date the bundled workerd binary (workerd 1.20260815.1) supports,
+  // so `wrangler dev` and the Vitest suite run without a runtime upgrade. Any
+  // date at or below the runtime's newest supported date is accepted by
+  // `wrangler deploy` as well.
+  "compatibility_date": "2026-08-15",
+  "workers_dev": true,
+
+  // D1 binding. `database_id` is a placeholder until you run `npm run db:create`
+  // and paste the real id back in here (see README, "Deploying").
+  // Local development and the test suite use a Miniflare-backed D1 and ignore it.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "vtrack",
+      "database_id": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+
+  // Non-secret configuration. Anything sensitive (JWT_SECRET, PASSWORD_PEPPER,
+  // ADMIN_EMAILS) must be stored with `wrangler secret put <NAME>` and is
+  // therefore deliberately absent here.
+  "vars": {
+    "ENVIRONMENT": "development",
+    "COIN_ENGINE_VERSION": "vcoin-rules-1.0.0",
+    "COINS_PER_STEP": "0.00095",
+    "MIN_STEPS_FOR_REWARD": "1000",
+    "MAX_CREDITED_STEPS_PER_DAY": "20000",
+    "MAX_STEP_COINS_PER_DAY": "8",
+    "MIN_CLAIM_GAP_SECONDS": "900",
+    "PBKDF2_ITERATIONS": "15000",
+    "ACCESS_TOKEN_TTL_SECONDS": "1800",
+    "REFRESH_TOKEN_TTL_SECONDS": "2592000",
+    "MIN_SUPPORTED_APP_VERSION": "1",
+    "GENERATIVE_AI_ENABLED": "false",
+    "AI_PROVIDER": "none"
+  },
+
+  // Free-plan Workers get 10 ms of CPU time per invocation regardless of this
+  // value; it is pinned so the intended budget is explicit in the repo.
+  "limits": {
+    "cpu_ms": 10
+  },
+
+  "observability": {
+    "enabled": true
+  }
+}
